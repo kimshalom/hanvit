@@ -28,6 +28,7 @@
         .subtitle, .title {
             color: #2C2C2C;
             text-align: center;
+            margin-bottom: 1px;
         }
 
         .subtitle {
@@ -38,15 +39,15 @@
         .title {
             font-size: 28px;
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 0px;
         }
 
         .sentence-box, .userInput, .next-sentence {
-            width: 100%;
             border-radius: 8px;
             margin-top: 10px;
             padding: 10px 15px;
         }
+        
 
         .sentence-box {
             background-color: #14AE5E;
@@ -60,14 +61,17 @@
             background-color: #FBF7FF;
             border: 2px solid #14AE5E;
             color: #000;
-            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
         }
 
         .next-sentence {
             background-color: #FFF;
             color: #888;
             font-size: 14px;
-            min-height: 30px;
+            min-height: 25px;
             line-height: 1.4;
         }
 
