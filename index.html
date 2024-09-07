@@ -3,121 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Page for 375x812</title>
+    <title>한빛청년부 통성경</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* 스타일링 */
         .bible-story-section {
             background-color: #e8e8e8;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 5px 5px 200px 5px;
-            font-family: Freesentation, Arial, sans-serif;
+            padding: 50px 80px 400px;
+            font-family: Freesentation;
         }
-
         .content-wrapper {
-            width: 100%;
-            max-width: 375px; /* Fit within the screen width */
+            width: 904px;
+            max-width: 100%;
         }
-
         .subtitle, .title {
             color: #2C2C2C;
             text-align: center;
         }
-
         .subtitle {
-            font-size: 18px; /* Smaller font for smaller screens */
+            font-size: 40px;
             font-weight: 300;
+            margin-bottom: -14px;
         }
-
         .title {
-            font-size: 28px;
+            font-size: 80px;
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 14px;
         }
-
         .sentence-box, .userInput, .next-sentence {
-            width: 100%;
+            width: 864px;
+            max-width: 100%;
             border-radius: 8px;
-            margin-top: 10px;
-            padding: 10px 15px;
+            margin-top: 12px;
+            padding: 15px 20px;
         }
-
         .sentence-box {
             background-color: #14AE5E;
+            margin: 72px auto 0;
             color: #FFF;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 400;
-            line-height: 1.5;
+            line-height: 28px; 
+            letter-spacing: -0.1px;
         }
-
         .userInput {
             background-color: #FBF7FF;
             border: 2px solid #14AE5E;
             color: #000;
-            font-size: 14px;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: -0.1px;
         }
-
         .next-sentence {
             background-color: #FFF;
+            min-height: 40px;
+            padding: 6px 20px 6px 20px;
             color: #888;
-            font-size: 14px;
-            min-height: 30px;
-            line-height: 1.4;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 40px;
+            height: 40px;
+            letter-spacing: -0.1px;
         }
-
         .incorrect {
-            color: #FE4932;
+        color: #FE4932;
         }
-
         .progress-bar-container {
-            margin-top: 20px;
-            width: 100%;
-            height: 50px;
+            margin-top: 283px;
+            width: 1920px;
+            height: 100px;
             background-color: #e0e0e0;
             position: relative;
         }
-
         .progress-bar {
             height: 100%;
-            width: 100%;
             background-color: #14AE5E;
-            width: 0%; /* Default width */
+            width: 0%; /* 초기 너비는 0% */
         }
-
         .progress-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 20px;
+            font-size: 48pt;
             color: #FFFFFF;
-        }
-
-        /* Media queries for larger screens */
-        @media (min-width: 768px) {
-            .content-wrapper {
-                max-width: 400px; /* Adjust for tablets */
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .content-wrapper {
-                max-width: 800px; /* Adjust for desktop */
-            }
-
-            .title {
-                font-size: 36px;
-            }
-
-            .sentence-box, .userInput, .next-sentence {
-                font-size: 18px;
-            }
+            font-family: Freesentation;
         }
     </style>
 </head>
@@ -127,13 +99,13 @@
         <div class="content-wrapper">
             <h2 class="subtitle">한빛청년부 통성경</h2>
             <h1 class="title">10분에 성경 전체 이야기</h1>
-
+    
             <!-- 현재 문장을 표시하는 박스 -->
             <div class="sentence-box" id="sentence"></div>
-
+    
             <!-- 사용자 입력 -->
-            <input type="text" id="userInput" class="userInput" placeholder="문장을 입력하세요." />
-
+            <input type="text" id="userInput" class="userInput" placeholder="문장을 입력하세요."/>
+    
             <!-- 다음 문장 미리보기 박스 -->
             <div id="nextSentence1" class="next-sentence"></div>
             <div id="nextSentence2" class="next-sentence"></div>
@@ -240,7 +212,7 @@
             "주님 속히 다시 오시리라는 예수님의 간절한 재림 약속을 전하며 계시록 이야기를 끝냅니다.",
             "성경을 열면 기적이 열립니다.",
             "하나님의 말씀, 성경으로 우리는 21세기 신앙 부흥 운동을 곱셈하며 교회 부흥 운동을 곱셈할 것입니다. 아멘."
-        ];
+            ];
 
         let currentSentenceIndex = 0;
 
@@ -252,41 +224,51 @@
         const progressBar = document.getElementById('progressBar');
         const progressText = document.getElementById('progressText');
 
+
         function displaySentences() {
+            // 첫 번째 문장 표시
             sentenceElement.innerText = sentences[currentSentenceIndex] || "";
+            // 다음 3개의 문장 표시
             nextSentence1.innerText = sentences[currentSentenceIndex + 1] || "";
             nextSentence2.innerText = sentences[currentSentenceIndex + 2] || "";
             nextSentence3.innerText = sentences[currentSentenceIndex + 3] || "";
+            // 진행률 업데이트
             updateProgress();
-            inputElement.value = '';
+            inputElement.value = ''; // 입력 필드를 비움
         }
 
         function updateProgress() {
             const progress = ((currentSentenceIndex + 1) / sentences.length) * 100;
-            progressBar.style.width = `${progress}%`;
-            progressText.innerText = `${progress.toFixed(2)}%`;
+            progressBar.style.width = `${progress}%`;  // 막대기 너비 설정
+            progressText.innerText = `${progress.toFixed(2)}%`;  // 진행률 텍스트 업데이트
         }
 
+
+        // 입력값 비교 및 색상 표시
         inputElement.addEventListener('input', function () {
             const typedText = inputElement.value;
             const currentSentence = sentences[currentSentenceIndex];
+
             let highlightedText = '';
             let isCorrect = true;
 
             for (let i = 0; i < currentSentence.length; i++) {
                 if (typedText[i] === currentSentence[i]) {
-                    highlightedText += currentSentence[i];
+                    highlightedText += currentSentence[i];  // 올바른 부분은 그대로 표시
                 } else if (typedText[i] !== undefined) {
-                    highlightedText += `<span class="incorrect">${currentSentence[i]}</span>`;
+                    highlightedText += `<span class="incorrect">${currentSentence[i]}</span>`;  // 틀린 부분은 빨간색
                     isCorrect = false;
                 } else {
-                    highlightedText += currentSentence[i];
+                    highlightedText += currentSentence[i];  // 아직 입력되지 않은 부분은 그대로 표시
                 }
             }
 
             sentenceElement.innerHTML = highlightedText;
+
+
         });
 
+        // 엔터로 문장 전환
         inputElement.addEventListener('keypress', function (event) {
             if (event.key === 'Enter') {
                 const typedText = inputElement.value;
@@ -296,14 +278,16 @@
                     currentSentenceIndex++;
                     if (currentSentenceIndex < sentences.length) {
                         displaySentences();
+                        inputElement.value = '';  // 입력 필드 비움
                     } else {
                         sentenceElement.textContent = "모든 문장을 완료했습니다!";
-                        inputElement.disabled = true;
+                        inputElement.disabled = true;  // 모든 문장을 완료하면 입력 비활성화
                     }
                 }
             }
         });
 
+        // 페이지 로드 시 첫 문장과 다음 문장 3개를 표시
         window.onload = function() {
             displaySentences();
         };
