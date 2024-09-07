@@ -1,239 +1,296 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Apple SD Gothic Neo'; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-    span.s2 {font: 12.0px 'Apple SD Gothic Neo'; font-kerning: none}
-    span.s3 {font: 12.0px Helvetica; font-kerning: none}
-    span.Apple-tab-span {white-space:pre}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한빛청년부 통성경</title>
+    <style>
+        /* 스타일링 */
+        .bible-story-section {
+            background-color: #e8e8e8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 80px 400px;
+            font-family: Freesentation;
+        }
+        .content-wrapper {
+            width: 904px;
+            max-width: 100%;
+        }
+        .subtitle, .title {
+            color: #2C2C2C;
+            text-align: center;
+        }
+        .subtitle {
+            font-size: 40px;
+            font-weight: 300;
+            margin-bottom: -14px;
+        }
+        .title {
+            font-size: 80px;
+            font-weight: 600;
+            margin-top: 14px;
+        }
+        .sentence-box, .userInput, .next-sentence {
+            width: 864px;
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 12px;
+            padding: 15px 20px;
+        }
+        .sentence-box {
+            background-color: #14AE5E;
+            margin: 72px auto 0;
+            color: #FFF;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px; 
+            letter-spacing: -0.1px;
+        }
+        .userInput {
+            background-color: #FBF7FF;
+            border: 2px solid #14AE5E;
+            color: #000;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: -0.1px;
+        }
+        .next-sentence {
+            background-color: #FFF;
+            min-height: 40px;
+            padding: 6px 20px 6px 20px;
+            color: #888;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 40px;
+            height: 40px;
+            letter-spacing: -0.1px;
+        }
+        .incorrect {
+        color: #FE4932;
+        }
+        .progress-bar-container {
+            margin-top: 283px;
+            width: 1920px;
+            height: 100px;
+            background-color: #e0e0e0;
+            position: relative;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #14AE5E;
+            width: 0%; /* 초기 너비는 0% */
+        }
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48pt;
+            color: #FFFFFF;
+            font-family: Freesentation;
+        }
+    </style>
 </head>
+
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="ko"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;</span><span class="s2">타자</span><span class="s1"> </span><span class="s2">연습</span><span class="s1">&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #e7ebed;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction: column;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100vh;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>h1 {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 2em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.sentence-box {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.2em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #e6f4e7;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid #2da44e;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 60%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>input {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 60%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid #2da44e;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.result {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.2em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.next-sentences {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #666;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.correct {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: black;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.incorrect {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #FE4932;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;</span><span class="s2">한빛청년부</span><span class="s1"> </span><span class="s2">통성경</span><span class="s1">&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;10</span><span class="s2">분에</span><span class="s1"> </span><span class="s2">성경</span><span class="s1"> </span><span class="s2">전체</span><span class="s1"> </span><span class="s2">이야기</span><span class="s1">&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="sentence-box" id="sentence"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;input type="text" id="userInput" placeholder="</span><span class="s2">문장을</span><span class="s1"> </span><span class="s2">입력하세요</span><span class="s1">..." /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="result" id="result"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="next-sentences" id="nextSentences"&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const sentences = [</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">           </span>"</span><span class="s1">우리가</span><span class="s3"> </span><span class="s1">사도행전</span><span class="s3"> 7</span><span class="s1">장의</span><span class="s3"> </span><span class="s1">스데반처럼</span><span class="s3"> </span><span class="s1">성경</span><span class="s3"> </span><span class="s1">전체를</span><span class="s3"> </span><span class="s1">틀리지</span><span class="s3"> </span><span class="s1">않게</span><span class="s3">, </span><span class="s1">치우치지</span><span class="s3"> </span><span class="s1">않게</span><span class="s3">, </span><span class="s1">선을</span><span class="s3"> </span><span class="s1">넘지</span><span class="s3"> </span><span class="s1">않고</span><span class="s3">,”,<span class="Apple-converted-space"> </span></span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">사람들</span><span class="s3"> </span><span class="s1">앞에서</span><span class="s3"> 10</span><span class="s1">분</span><span class="s3"> </span><span class="s1">안에</span><span class="s3"> </span><span class="s1">이야기한다면</span><span class="s3"> </span><span class="s1">하나님께서</span><span class="s3"> </span><span class="s1">얼마나</span><span class="s3"> </span><span class="s1">기뻐하실까요</span><span class="s3">?”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">성경</span><span class="s3"> </span><span class="s1">창세기부터</span><span class="s3"> </span><span class="s1">요한계시록까지</span><span class="s3"> 66</span><span class="s1">권은</span><span class="s3"> </span><span class="s1">하나의</span><span class="s3"> </span><span class="s1">이야기입니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">창세기는</span><span class="s3"> </span><span class="s1">하나님의</span><span class="s3"> </span><span class="s1">천지창조</span><span class="s3">, </span><span class="s1">노아</span><span class="s3"> </span><span class="s1">홍수</span><span class="s3"> </span><span class="s1">심판</span><span class="s3">, </span><span class="s1">하나님의</span><span class="s3"> </span><span class="s1">마음</span><span class="s3"> </span><span class="s1">이야기를</span><span class="s3"> </span><span class="s1">담은</span><span class="s3"> </span><span class="s1">역사</span><span class="s3"> </span><span class="s1">이전의</span><span class="s3"> </span><span class="s1">역사</span><span class="s3">, </span><span class="s1">원역사로</span><span class="s3"> </span><span class="s1">시작됩니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">이어서</span><span class="s3"> </span><span class="s1">모리아산</span><span class="s3"> </span><span class="s1">번제로</span><span class="s3"> </span><span class="s1">하나님과</span><span class="s3"> </span><span class="s1">친구가</span><span class="s3"> </span><span class="s1">된</span><span class="s3"> </span><span class="s1">아브라함</span><span class="s3">, </span><span class="s1">흉년에</span><span class="s3"> 100</span><span class="s1">배</span><span class="s3"> </span><span class="s1">결실을</span><span class="s3"> </span><span class="s1">거둔</span><span class="s3"> </span><span class="s1">이삭</span><span class="s3">, </span><span class="s1">열두</span><span class="s3"> </span><span class="s1">아들로</span><span class="s3"> </span><span class="s1">열두</span><span class="s3"> </span><span class="s1">지파의</span><span class="s3"> </span><span class="s1">기둥을</span><span class="s3"> </span><span class="s1">세운</span><span class="s3"> </span><span class="s1">야곱</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">이렇게</span><span class="s3"> </span><span class="s1">족장</span><span class="s3"> </span><span class="s1">세</span><span class="s3"> </span><span class="s1">사람의</span><span class="s3"> </span><span class="s1">가나안</span><span class="s3"> </span><span class="s1">이야기</span><span class="s3">, </span><span class="s1">그리고</span><span class="s3"> </span><span class="s1">요셉</span><span class="s3"> </span><span class="s1">때</span><span class="s3"> </span><span class="s1">민족을</span><span class="s3"> </span><span class="s1">만들기</span><span class="s3"> </span><span class="s1">위해</span><span class="s3"> </span><span class="s1">입애굽한</span><span class="s3"> </span><span class="s1">이야기입니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"400</span><span class="s1">년</span><span class="s3"> </span><span class="s1">후</span><span class="s3"> </span><span class="s1">히브리</span><span class="s3"> </span><span class="s1">민족이</span><span class="s3"> </span><span class="s1">첫</span><span class="s3"> </span><span class="s1">번째</span><span class="s3"> </span><span class="s1">유월절을</span><span class="s3"> </span><span class="s1">지키고</span><span class="s3"> </span><span class="s1">출애굽</span><span class="s3"> </span><span class="s1">합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">출애굽의</span><span class="s3"> </span><span class="s1">표면적</span><span class="s3"> </span><span class="s1">이유는</span><span class="s3"> </span><span class="s1">애굽</span><span class="s3"> </span><span class="s1">제국의</span><span class="s3"> </span><span class="s1">박해</span><span class="s3"> </span><span class="s1">때문입니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">그러나</span><span class="s3"> </span><span class="s1">실제로는</span><span class="s3"> </span><span class="s1">하나님과</span><span class="s3"> </span><span class="s1">히브리</span><span class="s3"> </span><span class="s1">민족</span><span class="s3"> </span><span class="s1">사이에</span><span class="s3"> </span><span class="s1">모든</span><span class="s3"> </span><span class="s1">민족을</span><span class="s3"> </span><span class="s1">위한</span><span class="s3"> </span><span class="s1">세계</span><span class="s3"> </span><span class="s1">선교의</span><span class="s3"> </span><span class="s1">꿈인</span><span class="s3"> ‘</span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라</span><span class="s3">' </span><span class="s1">언약을</span><span class="s3"> </span><span class="s1">세우기</span><span class="s3"> </span><span class="s1">위해서였습니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">레위기는</span><span class="s3"> 5</span><span class="s1">대</span><span class="s3"> </span><span class="s1">제사를</span><span class="s3"> </span><span class="s1">비롯한</span><span class="s3"> </span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라의</span><span class="s3"> </span><span class="s1">거룩한</span><span class="s3"> </span><span class="s1">시민학교</span><span class="s3"> </span><span class="s1">교과서이며</span><span class="s3">,”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">민수기는</span><span class="s3"> </span><span class="s1">광야</span><span class="s3"> 40</span><span class="s1">년</span><span class="s3"> </span><span class="s1">동안</span><span class="s3"> </span><span class="s1">모세에게</span><span class="s3"> </span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">교육을</span><span class="s3"> </span><span class="s1">받은</span><span class="s3"> </span><span class="s1">만나세대</span><span class="s3"> </span><span class="s1">이야기이고</span><span class="s3">,”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">신명기는</span><span class="s3"> </span><span class="s1">만나학교</span><span class="s3"> </span><span class="s1">졸업식</span><span class="s3"> </span><span class="s1">설교입니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">만나학교</span><span class="s3"> </span><span class="s1">졸업생들이</span><span class="s3"> </span><span class="s1">약속의</span><span class="s3"> </span><span class="s1">땅</span><span class="s3"> </span><span class="s1">가나안에</span><span class="s3"> 48</span><span class="s1">개</span><span class="s3"> </span><span class="s1">관공서를</span><span class="s3"> </span><span class="s1">중심으로</span><span class="s3"> </span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라를</span><span class="s3"> </span><span class="s1">세운</span><span class="s3"> </span><span class="s1">이야기가</span><span class="s3"> </span><span class="s1">여호수아이며</span><span class="s3">,”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">사사기는</span><span class="s3"> 350</span><span class="s1">년</span><span class="s3"> </span><span class="s1">동안</span><span class="s3"> </span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> 1</span><span class="s1">단계</span><span class="s3"> </span><span class="s1">흉년</span><span class="s3"> </span><span class="s1">징계와</span><span class="s3"> 2</span><span class="s1">단계</span><span class="s3"> </span><span class="s1">수탈</span><span class="s3"> </span><span class="s1">징계</span><span class="s3"> </span><span class="s1">가운데</span><span class="s3"> </span><span class="s1">진행된</span><span class="s3"> </span><span class="s1">사사들을</span><span class="s3"> </span><span class="s1">통한</span><span class="s3"> </span><span class="s1">구원</span><span class="s3"> </span><span class="s1">이야기이고</span><span class="s3">,”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">룻기는</span><span class="s3"> </span><span class="s1">사사</span><span class="s3"> </span><span class="s1">시대</span><span class="s3"> </span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">교육</span><span class="s3"> </span><span class="s1">성공</span><span class="s3"> </span><span class="s1">사례</span><span class="s3"> </span><span class="s1">이야기입니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">사무엘이</span><span class="s3"> </span><span class="s1">어두웠던</span><span class="s3"> </span><span class="s1">사사</span><span class="s3"> </span><span class="s1">시대를</span><span class="s3"> </span><span class="s1">마감하고</span><span class="s3"> </span><span class="s1">미스바세대를</span><span class="s3"> </span><span class="s1">탄생시켜</span><span class="s3"> </span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라를</span><span class="s3"> </span><span class="s1">꽃피웁니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">이어서</span><span class="s3"> </span><span class="s1">사울이</span><span class="s3"> </span><span class="s1">이스라엘의</span><span class="s3"> </span><span class="s1">초대</span><span class="s3"> </span><span class="s1">왕이</span><span class="s3"> </span><span class="s1">됩니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">사울과</span><span class="s3"> </span><span class="s1">사무엘의</span><span class="s3"> </span><span class="s1">갈등은</span><span class="s3"> </span><span class="s1">왕정</span><span class="s3"> 500</span><span class="s1">년</span><span class="s3"> </span><span class="s1">동안</span><span class="s3"> </span><span class="s1">왕과</span><span class="s3"> </span><span class="s1">선지자</span><span class="s3"> </span><span class="s1">대립의</span><span class="s3"> </span><span class="s1">시작이</span><span class="s3"> </span><span class="s1">됩니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">다윗이</span><span class="s3"> </span><span class="s1">세</span><span class="s3"> </span><span class="s1">번</span><span class="s3"> </span><span class="s1">기름</span><span class="s3"> </span><span class="s1">부음을</span><span class="s3"> </span><span class="s1">받고</span><span class="s3"> </span><span class="s1">왕이</span><span class="s3"> </span><span class="s1">되어</span><span class="s3"> </span><span class="s1">성전</span><span class="s3"> </span><span class="s1">건축을</span><span class="s3"> </span><span class="s1">준비하고</span><span class="s3"> </span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">충성도를</span><span class="s3"> </span><span class="s1">높이며</span><span class="s3"> </span><span class="s1">하나님의</span><span class="s3"> </span><span class="s1">종으로</span><span class="s3"> </span><span class="s1">인정을</span><span class="s3"> </span><span class="s1">받습니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">그리고</span><span class="s3"> </span><span class="s1">하늘</span><span class="s3"> </span><span class="s1">문을</span><span class="s3"> </span><span class="s1">연</span><span class="s3"> </span><span class="s1">다윗의</span><span class="s3"> </span><span class="s1">여러</span><span class="s3"> </span><span class="s1">시편과</span><span class="s3"> </span><span class="s1">하나님의</span><span class="s3"> </span><span class="s1">자랑</span><span class="s3">, </span><span class="s1">하늘보석</span><span class="s3"> </span><span class="s1">욥</span><span class="s3"> </span><span class="s1">이야기가</span><span class="s3"> </span><span class="s1">있습니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">솔로몬은</span><span class="s3"> </span><span class="s1">모든</span><span class="s3"> </span><span class="s1">민족을</span><span class="s3"> </span><span class="s1">위한</span><span class="s3"> </span><span class="s1">성전</span><span class="s3"> </span><span class="s1">건축</span><span class="s3">, </span><span class="s1">그리고</span><span class="s3"> </span><span class="s1">잠언</span><span class="s3">, </span><span class="s1">아가</span><span class="s3">, </span><span class="s1">전도서를</span><span class="s3"> </span><span class="s1">남깁니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">솔로몬</span><span class="s3"> </span><span class="s1">사후</span><span class="s3"> </span><span class="s1">남북</span><span class="s3"> </span><span class="s1">분열</span><span class="s3"> </span><span class="s1">왕조</span><span class="s3"> 200</span><span class="s1">년</span><span class="s3"> </span><span class="s1">동안</span><span class="s3"> </span><span class="s1">엘리야</span><span class="s3">, </span><span class="s1">엘리사</span><span class="s3">, </span><span class="s1">아모스</span><span class="s3">, </span><span class="s1">호세아의</span><span class="s3"> </span><span class="s1">외침과</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">열방을</span><span class="s3"> </span><span class="s1">위한</span><span class="s3"> </span><span class="s1">하나님의</span><span class="s3"> </span><span class="s1">마음을</span><span class="s3"> </span><span class="s1">깨달은</span><span class="s3"> </span><span class="s1">요나의</span><span class="s3"> 3</span><span class="s1">일</span><span class="s3"> </span><span class="s1">기적</span><span class="s3"> </span><span class="s1">이야기가</span><span class="s3"> </span><span class="s1">선포됩니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">그러나</span><span class="s3"> </span><span class="s1">여러</span><span class="s3"> </span><span class="s1">선지자의</span><span class="s3"> </span><span class="s1">설득에도</span><span class="s3"> </span><span class="s1">끝내</span><span class="s3"> </span><span class="s1">여러보암의</span><span class="s3"> </span><span class="s1">길로</span><span class="s3"> </span><span class="s1">행한</span><span class="s3"> </span><span class="s1">북이스라엘이</span><span class="s3"> B.C.8</span><span class="s1">세기</span><span class="s3"> </span><span class="s1">앗수르에</span><span class="s3"> </span><span class="s1">멸망합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">이때</span><span class="s3"> </span><span class="s1">이사야</span><span class="s3">, </span><span class="s1">미가</span><span class="s3"> </span><span class="s1">선지자는</span><span class="s3"> </span><span class="s1">메시아</span><span class="s3"> </span><span class="s1">예언과</span><span class="s3"> </span><span class="s1">베들레헴</span><span class="s3"> </span><span class="s1">탄생을</span><span class="s3"> </span><span class="s1">예고합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"150</span><span class="s1">년</span><span class="s3"> </span><span class="s1">후</span><span class="s3"> </span><span class="s1">남유다가</span><span class="s3"> </span><span class="s1">바벨론에</span><span class="s3"> </span><span class="s1">멸망할</span><span class="s3"> </span><span class="s1">때</span><span class="s3"> </span><span class="s1">스바냐</span><span class="s3">, </span><span class="s1">하박국</span><span class="s3">, </span><span class="s1">나훔</span><span class="s3">, </span><span class="s1">요엘</span><span class="s3"> </span><span class="s1">선지자가</span><span class="s3"> 500</span><span class="s1">년</span><span class="s3"> </span><span class="s1">왕정</span><span class="s3"> </span><span class="s1">평가를</span><span class="s3"> </span><span class="s1">포괄적으로</span><span class="s3"> </span><span class="s1">선언합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">이때</span><span class="s3"> </span><span class="s1">예레미야는</span><span class="s3"> </span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">징계</span><span class="s3"> 3</span><span class="s1">단계인</span><span class="s3"> </span><span class="s1">바벨론</span><span class="s3"> </span><span class="s1">포로</span><span class="s3"> 70</span><span class="s1">년의</span><span class="s3"> </span><span class="s1">네</span><span class="s3"> </span><span class="s1">가지</span><span class="s3"> </span><span class="s1">의미</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"-</span><span class="s1">징계</span><span class="s3">, </span><span class="s1">교육</span><span class="s3">, </span><span class="s1">안식</span><span class="s3">, </span><span class="s1">제국</span><span class="s3"> </span><span class="s1">수명을</span><span class="s3"> </span><span class="s1">말하며</span><span class="s3"> </span><span class="s1">새</span><span class="s3"> </span><span class="s1">언약을</span><span class="s3"> </span><span class="s1">예고합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">그리고</span><span class="s3"> </span><span class="s1">바벨론</span><span class="s3"> </span><span class="s1">포로</span><span class="s3"> </span><span class="s1">징계를</span><span class="s3"> </span><span class="s1">마치고</span><span class="s3"> </span><span class="s1">예루살렘으로</span><span class="s3"> </span><span class="s1">돌아갈</span><span class="s3"> </span><span class="s1">재건세대에게</span><span class="s3"> </span><span class="s1">하나님의</span><span class="s3"> </span><span class="s1">미래</span><span class="s3"> </span><span class="s1">선물</span><span class="s3">, </span><span class="s1">역대기가</span><span class="s3"> </span><span class="s1">주어집니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">에스겔이</span><span class="s3"> </span><span class="s1">바벨론에서</span><span class="s3"> </span><span class="s1">남유다</span><span class="s3"> </span><span class="s1">포로민들을</span><span class="s3"> </span><span class="s1">하나님의</span><span class="s3"> </span><span class="s1">말씀으로</span><span class="s3"> </span><span class="s1">설득함으로</span><span class="s3"> </span><span class="s1">유대인이</span><span class="s3"> </span><span class="s1">시작됩니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">그</span><span class="s3"> </span><span class="s1">사이</span><span class="s3"> </span><span class="s1">다니엘은</span><span class="s3"> </span><span class="s1">환상</span><span class="s3"> </span><span class="s1">가운데</span><span class="s3"> </span><span class="s1">바벨론</span><span class="s3">, </span><span class="s1">페르시아</span><span class="s3">, </span><span class="s1">헬라</span><span class="s3">, </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">제국</span><span class="s3"> </span><span class="s1">변동의</span><span class="s3"> </span><span class="s1">밑그림을</span><span class="s3"> </span><span class="s1">그리며</span><span class="s3"> </span><span class="s1">영원한</span><span class="s3"> </span><span class="s1">하나님</span><span class="s3"> </span><span class="s1">나라를</span><span class="s3"> </span><span class="s1">예언합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">바벨론</span><span class="s3"> </span><span class="s1">제국은</span><span class="s3"> </span><span class="s1">하나님의</span><span class="s3"> </span><span class="s1">약속대로</span><span class="s3"> 70</span><span class="s1">년</span><span class="s3"> </span><span class="s1">만에</span><span class="s3"> </span><span class="s1">페르시아에</span><span class="s3"> </span><span class="s1">멸망하고</span><span class="s3">,”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">페르시아</span><span class="s3"> </span><span class="s1">제국은</span><span class="s3"> </span><span class="s1">스룹바벨</span><span class="s3">, </span><span class="s1">학개</span><span class="s3">, </span><span class="s1">스가랴와</span><span class="s3"> </span><span class="s1">함께</span><span class="s3"> </span><span class="s1">유대인들을</span><span class="s3"> </span><span class="s1">돌려보내며</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">예루살렘에</span><span class="s3"> </span><span class="s1">성전을</span><span class="s3"> </span><span class="s1">재건하게</span><span class="s3"> </span><span class="s1">함으로</span><span class="s3"> </span><span class="s1">레반트</span><span class="s3"> </span><span class="s1">지역에</span><span class="s3"> </span><span class="s1">투자를</span><span class="s3"> </span><span class="s1">합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">한편</span><span class="s3"> </span><span class="s1">페르시아에</span><span class="s3"> </span><span class="s1">남은</span><span class="s3"> </span><span class="s1">유대인들은</span><span class="s3"> </span><span class="s1">아말렉족</span><span class="s3"> </span><span class="s1">하만의</span><span class="s3"> </span><span class="s1">계략으로</span><span class="s3"> </span><span class="s1">죽을</span><span class="s3"> </span><span class="s1">위기에</span><span class="s3"> </span><span class="s1">처하지만</span><span class="s3">, </span><span class="s1">에스더의</span><span class="s3"> </span><span class="s1">파티를</span><span class="s3"> </span><span class="s1">통해</span><span class="s3"> </span><span class="s1">위기를</span><span class="s3"> </span><span class="s1">극복합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">이후</span><span class="s3"> </span><span class="s1">에스라가</span><span class="s3"> 2</span><span class="s1">차</span><span class="s3"> </span><span class="s1">귀환을</span><span class="s3"> </span><span class="s1">이끌어</span><span class="s3"> </span><span class="s1">산헤드린</span><span class="s3"> </span><span class="s1">공회를</span><span class="s3"> </span><span class="s1">설치하고</span><span class="s3">,”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">느헤미야가</span><span class="s3"> 3</span><span class="s1">차</span><span class="s3"> </span><span class="s1">귀환을</span><span class="s3"> </span><span class="s1">이끌어</span><span class="s3"> </span><span class="s1">성벽을</span><span class="s3"> </span><span class="s1">재건함으로</span><span class="s3"> </span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">재건을</span><span class="s3"> </span><span class="s1">이룹니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라를</span><span class="s3"> </span><span class="s1">세운</span><span class="s3"> </span><span class="s1">지</span><span class="s3"> 1000</span><span class="s1">년만에</span><span class="s3"> </span><span class="s1">하나님께서는</span><span class="s3"> </span><span class="s1">말라기</span><span class="s3"> </span><span class="s1">선지자를</span><span class="s3"> </span><span class="s1">통해</span><span class="s3"> </span><span class="s1">그동안의</span><span class="s3"> </span><span class="s1">사랑</span><span class="s3"> </span><span class="s1">고백과</span><span class="s3"> </span><span class="s1">엘리야를</span><span class="s3"> </span><span class="s1">보내</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">아버지</span><span class="s3"> </span><span class="s1">마음을</span><span class="s3"> </span><span class="s1">자녀에게로</span><span class="s3">, </span><span class="s1">자녀들의</span><span class="s3"> </span><span class="s1">마음을</span><span class="s3"> </span><span class="s1">아버지에게로</span><span class="s3"> </span><span class="s1">돌이키게</span><span class="s3"> </span><span class="s1">하겠다는</span><span class="s3"> </span><span class="s1">약속을</span><span class="s3"> </span><span class="s1">주신</span><span class="s3"> </span><span class="s1">후</span><span class="s3"> 400</span><span class="s1">년</span><span class="s3"> </span><span class="s1">동안</span><span class="s3"> </span><span class="s1">침묵하십니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">신구약</span><span class="s3"> </span><span class="s1">중간기</span><span class="s3"> 400</span><span class="s1">년</span><span class="s3"> </span><span class="s1">동안</span><span class="s3"> </span><span class="s1">제국들이</span><span class="s3"> </span><span class="s1">변동합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">페르시아</span><span class="s3"> </span><span class="s1">제국이</span><span class="s3"> </span><span class="s1">멸망하고</span><span class="s3"> </span><span class="s1">헬라</span><span class="s3"> </span><span class="s1">제국이</span><span class="s3"> </span><span class="s1">등장하는데</span><span class="s3">,”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">헬라</span><span class="s3"> </span><span class="s1">제국의</span><span class="s3"> </span><span class="s1">프톨레미</span><span class="s3"> </span><span class="s1">왕조</span><span class="s3"> </span><span class="s1">때에</span><span class="s3"> </span><span class="s1">모세오경이</span><span class="s3"> </span><span class="s1">헬라어로</span><span class="s3"> </span><span class="s1">번역되어</span><span class="s3"> </span><span class="s1">세계화가</span><span class="s3"> </span><span class="s1">이루어집니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이어서</span><span class="s3"> </span><span class="s1">헬라</span><span class="s3"> </span><span class="s1">제국의</span><span class="s3"> </span><span class="s1">셀루커스</span><span class="s3"> </span><span class="s1">왕조가</span><span class="s3"> </span><span class="s1">예루살렘</span><span class="s3"> </span><span class="s1">성전을</span><span class="s3"> </span><span class="s1">모독하자</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">마카비</span><span class="s3"> </span><span class="s1">가문이</span><span class="s3"> </span><span class="s1">혁명을</span><span class="s3"> </span><span class="s1">일으켜</span><span class="s3"> </span><span class="s1">성전을</span><span class="s3"> </span><span class="s1">청결하게</span><span class="s3"> </span><span class="s1">한</span><span class="s3"> </span><span class="s1">후</span><span class="s3"> </span><span class="s1">하스몬</span><span class="s3"> </span><span class="s1">왕조를</span><span class="s3"> </span><span class="s1">세웁니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">그런데</span><span class="s3"> </span><span class="s1">하스몬</span><span class="s3"> </span><span class="s1">왕조는</span><span class="s3"> 80</span><span class="s1">여</span><span class="s3"> </span><span class="s1">년</span><span class="s3"> </span><span class="s1">동안</span><span class="s3"> </span><span class="s1">대제사장이</span><span class="s3"> </span><span class="s1">왕을</span><span class="s3"> </span><span class="s1">겸직하므로</span><span class="s3"> </span><span class="s1">제사장</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">법을</span><span class="s3"> </span><span class="s1">어깁니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이후</span><span class="s3"> </span><span class="s1">헬라</span><span class="s3"> </span><span class="s1">제국이</span><span class="s3"> </span><span class="s1">로마에</span><span class="s3"> </span><span class="s1">넘어가면서</span><span class="s3"> </span><span class="s1">유대는</span><span class="s3"> </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">제국의</span><span class="s3"> </span><span class="s1">통치하에</span><span class="s3"> </span><span class="s1">들어갑니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이때</span><span class="s3"> </span><span class="s1">로마는</span><span class="s3"> </span><span class="s1">에돔족인</span><span class="s3"> </span><span class="s1">헤롯</span><span class="s3"> </span><span class="s1">가문을</span><span class="s3"> </span><span class="s1">유대의</span><span class="s3"> </span><span class="s1">분봉</span><span class="s3"> </span><span class="s1">왕으로</span><span class="s3"> </span><span class="s1">삼아</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">예루살렘</span><span class="s3"> </span><span class="s1">성전을</span><span class="s3"> </span><span class="s1">재건축하게</span><span class="s3"> </span><span class="s1">함으로</span><span class="s3"> </span><span class="s1">성전을</span><span class="s3"> </span><span class="s1">로마의</span><span class="s3"> </span><span class="s1">통치</span><span class="s3"> </span><span class="s1">도구로</span><span class="s3"> </span><span class="s1">전락시킵니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">바로</span><span class="s3"> </span><span class="s1">이때</span><span class="s3"> B.C.</span><span class="s1">와</span><span class="s3"> A.D. </span><span class="s1">분기점에</span><span class="s3"> </span><span class="s1">예수님께서</span><span class="s3"> </span><span class="s1">천사들과</span><span class="s3"> </span><span class="s1">목자들의</span><span class="s3"> </span><span class="s1">기쁨</span><span class="s3"> </span><span class="s1">속에</span><span class="s3"> </span><span class="s1">베들레헴에서</span><span class="s3"> </span><span class="s1">탄생하십니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">예수님께서는</span><span class="s3"> </span><span class="s1">공생애</span><span class="s3"> 3</span><span class="s1">년동안</span><span class="s3"> </span><span class="s1">하나님</span><span class="s3"> </span><span class="s1">사랑을</span><span class="s3"> </span><span class="s1">말씀하시며</span><span class="s3"> </span><span class="s1">한</span><span class="s3"> </span><span class="s1">영혼의</span><span class="s3"> </span><span class="s1">가치를</span><span class="s3"> </span><span class="s1">천하보다</span><span class="s3"> </span><span class="s1">귀하게</span><span class="s3"> </span><span class="s1">여기셨습니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">때론</span><span class="s3"> </span><span class="s1">사랑때문에</span><span class="s3"> </span><span class="s1">피곤하고</span><span class="s3"> </span><span class="s1">지치기도</span><span class="s3"> </span><span class="s1">하셨습니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">그리고</span><span class="s3"> </span><span class="s1">약한자의</span><span class="s3"> </span><span class="s1">비빌</span><span class="s3"> </span><span class="s1">언덕이</span><span class="s3"> </span><span class="s1">되시며</span><span class="s3"> </span><span class="s1">사마리아인과</span><span class="s3"> </span><span class="s1">세리의</span><span class="s3"> </span><span class="s1">친구가</span><span class="s3"> </span><span class="s1">되어주십니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span>"</span><span class="s1">공생애</span><span class="s3"> </span><span class="s1">마지막</span><span class="s3"> </span><span class="s1">일주일동안</span><span class="s3"> </span><span class="s1">예수님께서는</span><span class="s3"> </span><span class="s1">예루살렘에서</span><span class="s3"> </span><span class="s1">마지막</span><span class="s3"> </span><span class="s1">유월절</span><span class="s3"> </span><span class="s1">첫</span><span class="s3"> </span><span class="s1">번째</span><span class="s3"> </span><span class="s1">성찬식을</span><span class="s3"> </span><span class="s1">통해</span><span class="s3"> </span><span class="s1">새</span><span class="s3"> </span><span class="s1">언약을</span><span class="s3"> </span><span class="s1">체결하신</span><span class="s3"> </span><span class="s1">후</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3">"1</span><span class="s1">차</span><span class="s3"> </span><span class="s1">산헤드린</span><span class="s3"> </span><span class="s1">공회</span><span class="s3"> </span><span class="s1">재판과</span><span class="s3"> </span><span class="s1">빌라도</span><span class="s3"> </span><span class="s1">재판을</span><span class="s3"> </span><span class="s1">받으시고</span><span class="s3"> </span><span class="s1">로마의</span><span class="s3"> </span><span class="s1">형틀이자</span><span class="s3"> </span><span class="s1">하늘</span><span class="s3"> </span><span class="s1">성소인</span><span class="s3"> </span><span class="s1">십자가에</span><span class="s3"> </span><span class="s1">달리십니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">예수님께서</span><span class="s3"> </span><span class="s1">십자가에서</span><span class="s3"> </span><span class="s1">다</span><span class="s3"> </span><span class="s1">이루었다고</span><span class="s3"> </span><span class="s1">선언하시는</span><span class="s3"> </span><span class="s1">순간</span><span class="s3"> </span><span class="s1">예루살렘</span><span class="s3"> </span><span class="s1">성전의</span><span class="s3"> </span><span class="s1">휘장이</span><span class="s3"> </span><span class="s1">위에서</span><span class="s3"> </span><span class="s1">아래로</span><span class="s3"> </span><span class="s1">찢어집니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이는</span><span class="s3"> </span><span class="s1">예수님께서</span><span class="s3"> </span><span class="s1">율법과</span><span class="s3"> </span><span class="s1">선지서의</span><span class="s3"> </span><span class="s1">완성으로</span><span class="s3"> </span><span class="s1">단번</span><span class="s3"> </span><span class="s1">제사를</span><span class="s3"> </span><span class="s1">드리시고</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">우리를</span><span class="s3"> </span><span class="s1">위한</span><span class="s3"> </span><span class="s1">새로운</span><span class="s3"> </span><span class="s1">살길의</span><span class="s3"> </span><span class="s1">휘장이</span><span class="s3"> </span><span class="s1">되심으로</span><span class="s3"> </span><span class="s1">하나님</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">복음을</span><span class="s3"> </span><span class="s1">완성하신</span><span class="s3"> </span><span class="s1">것입니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">십자가</span><span class="s3"> </span><span class="s1">죽음</span><span class="s3"> </span><span class="s1">후</span><span class="s3"> 3</span><span class="s1">일에</span><span class="s3"> </span><span class="s1">부활하신</span><span class="s3"> </span><span class="s1">예수님께서는</span><span class="s3"> </span><span class="s1">승천하시기</span><span class="s3"> </span><span class="s1">전</span><span class="s3"> </span><span class="s1">모든</span><span class="s3"> </span><span class="s1">민족에게</span><span class="s3"> </span><span class="s1">전할</span><span class="s3"> </span><span class="s1">지상명령을</span><span class="s3"> </span><span class="s1">말씀하십니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이후</span><span class="s3"> </span><span class="s1">오순절</span><span class="s3"> </span><span class="s1">성령</span><span class="s3"> </span><span class="s1">체험을</span><span class="s3"> </span><span class="s1">한</span><span class="s3"> </span><span class="s1">열두</span><span class="s3"> </span><span class="s1">사도들이</span><span class="s3"> </span><span class="s1">제자</span><span class="s3"> </span><span class="s1">시대를</span><span class="s3"> </span><span class="s1">열고</span><span class="s3"> </span><span class="s1">예루살렘</span><span class="s3"> </span><span class="s1">공회를</span><span class="s3"> </span><span class="s1">열며</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3">"2</span><span class="s1">차</span><span class="s3">, 3</span><span class="s1">차</span><span class="s3">, 4</span><span class="s1">차</span><span class="s3"> </span><span class="s1">산헤드린</span><span class="s3"> </span><span class="s1">공회</span><span class="s3"> </span><span class="s1">재판의</span><span class="s3"> </span><span class="s1">위협</span><span class="s3"> </span><span class="s1">속에서도</span><span class="s3"> </span><span class="s1">하나님</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">복음을</span><span class="s3"> </span><span class="s1">전하고</span><span class="s3"> </span><span class="s1">교회를</span><span class="s3"> </span><span class="s1">세워갑니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">한편</span><span class="s3"> </span><span class="s1">바울은</span><span class="s3"> </span><span class="s1">다메섹</span><span class="s3"> </span><span class="s1">길에서</span><span class="s3"> </span><span class="s1">예수님을</span><span class="s3"> </span><span class="s1">만난</span><span class="s3"> </span><span class="s1">후</span><span class="s3"> </span><span class="s1">이방인의</span><span class="s3"> </span><span class="s1">사도로</span><span class="s3"> </span><span class="s1">부름을</span><span class="s3"> </span><span class="s1">받습니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">바울은</span><span class="s3"> </span><span class="s1">예루살렘</span><span class="s3"> </span><span class="s1">공회에서</span><span class="s3"> </span><span class="s1">바나바를</span><span class="s3"> </span><span class="s1">안디옥</span><span class="s3"> </span><span class="s1">교회에</span><span class="s3"> </span><span class="s1">파송할</span><span class="s3"> </span><span class="s1">때</span><span class="s3"> </span><span class="s1">동행하게</span><span class="s3"> </span><span class="s1">되어</span><span class="s3"> </span><span class="s1">소아시아</span><span class="s3"> 1</span><span class="s1">차</span><span class="s3"> </span><span class="s1">전도</span><span class="s3"> </span><span class="s1">여행을</span><span class="s3"> </span><span class="s1">합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"2</span><span class="s1">년</span><span class="s3"> </span><span class="s1">후</span><span class="s3"> </span><span class="s1">안디옥</span><span class="s3"> </span><span class="s1">교회에</span><span class="s3"> </span><span class="s1">생긴</span><span class="s3"> </span><span class="s1">할례</span><span class="s3"> </span><span class="s1">문제를</span><span class="s3"> </span><span class="s1">놓고</span><span class="s3"> </span><span class="s1">예루살렘</span><span class="s3"> </span><span class="s1">공회가</span><span class="s3"> </span><span class="s1">열립니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이때</span><span class="s3"> </span><span class="s1">오직</span><span class="s3"> </span><span class="s1">예수</span><span class="s3"> </span><span class="s1">십자가만이</span><span class="s3"> </span><span class="s1">하나님</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">구원의</span><span class="s3"> </span><span class="s1">기준이라고</span><span class="s3"> </span><span class="s1">선언합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">그리고</span><span class="s3"> </span><span class="s1">바울도</span><span class="s3"> </span><span class="s1">바나바와</span><span class="s3"> </span><span class="s1">같은</span><span class="s3"> </span><span class="s1">사랑받는</span><span class="s3"> </span><span class="s1">형제로</span><span class="s3"> </span><span class="s1">결의합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이후</span><span class="s3"> </span><span class="s1">바울</span><span class="s3"> </span><span class="s1">팀은</span><span class="s3"> 2</span><span class="s1">차</span><span class="s3">, 3</span><span class="s1">차</span><span class="s3"> </span><span class="s1">전도</span><span class="s3"> </span><span class="s1">여행을</span><span class="s3"> </span><span class="s1">하며</span><span class="s3"> </span><span class="s1">데살로니가</span><span class="s3">, </span><span class="s1">갈라디아</span><span class="s3">, </span><span class="s1">고린도</span><span class="s3">, </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">교회에</span><span class="s3"> </span><span class="s1">편지를</span><span class="s3"> </span><span class="s1">써</span><span class="s3"> </span><span class="s1">보냅니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">바울</span><span class="s3"> </span><span class="s1">팀은</span><span class="s3"> 3</span><span class="s1">차</span><span class="s3"> </span><span class="s1">전도</span><span class="s3"> </span><span class="s1">여행이</span><span class="s3"> </span><span class="s1">끝날</span><span class="s3"> </span><span class="s1">무렵</span><span class="s3">,”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">로마를</span><span class="s3"> </span><span class="s1">거쳐</span><span class="s3"> </span><span class="s1">땅끝인</span><span class="s3"> </span><span class="s1">스페인까지</span><span class="s3"> </span><span class="s1">복음을</span><span class="s3"> </span><span class="s1">전하기</span><span class="s3"> </span><span class="s1">위한</span><span class="s3"> </span><span class="s1">계획을</span><span class="s3"> </span><span class="s1">세우고</span><span class="s3"> </span><span class="s1">예루살렘</span><span class="s3"> </span><span class="s1">교회를</span><span class="s3"> </span><span class="s1">방문하여</span><span class="s3"> </span><span class="s1">이</span><span class="s3"> </span><span class="s1">소식을</span><span class="s3"> </span><span class="s1">알립니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이때</span><span class="s3"> </span><span class="s1">예루살렘</span><span class="s3"> </span><span class="s1">공회의</span><span class="s3"> </span><span class="s1">당부로</span><span class="s3"> </span><span class="s1">바울은</span><span class="s3"> </span><span class="s1">예루살렘</span><span class="s3"> </span><span class="s1">성전에</span><span class="s3"> </span><span class="s1">갔다가</span><span class="s3"> </span><span class="s1">유대인들에게</span><span class="s3"> </span><span class="s1">잡혀</span><span class="s3"> </span><span class="s1">죽을</span><span class="s3"> </span><span class="s1">위기에</span><span class="s3"> </span><span class="s1">처하게</span><span class="s3"> </span><span class="s1">되지만</span><span class="s3">,”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">오히려</span><span class="s3"> </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">천부장의</span><span class="s3"> </span><span class="s1">협조로</span><span class="s3"> 5</span><span class="s1">차</span><span class="s3"> </span><span class="s1">산헤드린</span><span class="s3"> </span><span class="s1">공회를</span><span class="s3"> </span><span class="s1">열어</span><span class="s3"> </span><span class="s1">공회원들에게</span><span class="s3"> </span><span class="s1">마지막</span><span class="s3"> </span><span class="s1">설득을</span><span class="s3"> </span><span class="s1">시도합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">그러나</span><span class="s3"> </span><span class="s1">산헤드린</span><span class="s3"> </span><span class="s1">공회의</span><span class="s3"> </span><span class="s1">위협이</span><span class="s3"> </span><span class="s1">거칠어지자</span><span class="s3"> </span><span class="s1">바울은</span><span class="s3"> </span><span class="s1">의도적으로</span><span class="s3"> </span><span class="s1">부활</span><span class="s3"> </span><span class="s1">신앙을</span><span class="s3"> </span><span class="s1">고백함으로</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">사두개파와</span><span class="s3"> </span><span class="s1">바리새파를</span><span class="s3"> </span><span class="s1">분열시키고</span><span class="s3"> </span><span class="s1">그곳을</span><span class="s3"> </span><span class="s1">빠져나옵니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">그날</span><span class="s3"> </span><span class="s1">밤</span><span class="s3"> </span><span class="s1">바울은</span><span class="s3"> </span><span class="s1">로마천부장의</span><span class="s3"> </span><span class="s1">보호</span><span class="s3"> </span><span class="s1">속에</span><span class="s3"> </span><span class="s1">가이사랴로</span><span class="s3"> </span><span class="s1">이송되고</span><span class="s3">, </span><span class="s1">다음</span><span class="s3"> </span><span class="s1">날</span><span class="s3"> </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">총독</span><span class="s3"> </span><span class="s1">벨릭스의</span><span class="s3"> </span><span class="s1">재판을</span><span class="s3"> </span><span class="s1">받고</span><span class="s3"> 2</span><span class="s1">년간</span><span class="s3"> </span><span class="s1">구금됩니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이후</span><span class="s3"> </span><span class="s1">바울은</span><span class="s3"> </span><span class="s1">새로</span><span class="s3"> </span><span class="s1">부임한</span><span class="s3"> </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">총독</span><span class="s3"> </span><span class="s1">베스도의</span><span class="s3"> </span><span class="s1">재판을</span><span class="s3"> </span><span class="s1">받던</span><span class="s3"> </span><span class="s1">중</span><span class="s3">,”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">산헤드린</span><span class="s3"> </span><span class="s1">공회의</span><span class="s3"> </span><span class="s1">살해</span><span class="s3"> </span><span class="s1">위협을</span><span class="s3"> </span><span class="s1">피하려고</span><span class="s3"> </span><span class="s1">결국</span><span class="s3">, </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">시민권을</span><span class="s3"> </span><span class="s1">이용해</span><span class="s3"> </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">황제</span><span class="s3"> </span><span class="s1">재판을</span><span class="s3"> </span><span class="s1">요구하며</span><span class="s3"> </span><span class="s1">죄수의</span><span class="s3"> </span><span class="s1">길을</span><span class="s3"> </span><span class="s1">선택합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">그래서</span><span class="s3"> </span><span class="s1">죄수</span><span class="s3"> </span><span class="s1">이송선을</span><span class="s3"> </span><span class="s1">타고</span><span class="s3"> </span><span class="s1">로마에</span><span class="s3"> </span><span class="s1">도착합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">바울은</span><span class="s3"> </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">감옥에서</span><span class="s3"> </span><span class="s1">황제</span><span class="s3"> </span><span class="s1">재판을</span><span class="s3"> </span><span class="s1">기다리는</span><span class="s3"> 2</span><span class="s1">년</span><span class="s3"> </span><span class="s1">동안</span><span class="s3"> </span><span class="s1">하나님</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">복음을</span><span class="s3"> </span><span class="s1">전하며</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">교회론인</span><span class="s3"> </span><span class="s1">에베소서</span><span class="s3">, </span><span class="s1">기독론인</span><span class="s3"> </span><span class="s1">골로새서와</span><span class="s3"> </span><span class="s1">빌립보서</span><span class="s3">, </span><span class="s1">빌레몬서를</span><span class="s3"> </span><span class="s1">써</span><span class="s3"> </span><span class="s1">보냅니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">그리고</span><span class="s3"> 2</span><span class="s1">년</span><span class="s3"> </span><span class="s1">만에</span><span class="s3"> </span><span class="s1">잠시</span><span class="s3"> </span><span class="s1">자유의</span><span class="s3"> </span><span class="s1">몸이</span><span class="s3"> </span><span class="s1">된</span><span class="s3"> </span><span class="s1">바울은</span><span class="s3"> </span><span class="s1">또다시</span><span class="s3"> </span><span class="s1">전도</span><span class="s3"> </span><span class="s1">여행을</span><span class="s3"> </span><span class="s1">진행합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">그런데</span><span class="s3"> A.D.64</span><span class="s1">년</span><span class="s3"> </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">대화재</span><span class="s3"> </span><span class="s1">사건이</span><span class="s3"> </span><span class="s1">발생합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이때</span><span class="s3"> </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">제국은</span><span class="s3"> </span><span class="s1">기독교</span><span class="s3"> </span><span class="s1">복음</span><span class="s3"> 1</span><span class="s1">세대</span><span class="s3"> </span><span class="s1">지도자</span><span class="s3"> 200</span><span class="s1">여</span><span class="s3"> </span><span class="s1">명을</span><span class="s3"> </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">방화범으로</span><span class="s3"> </span><span class="s1">지목하여</span><span class="s3"> </span><span class="s1">잔인하게</span><span class="s3"> </span><span class="s1">처형합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">바울도</span><span class="s3"> </span><span class="s1">죽음이</span><span class="s3"> </span><span class="s1">임박했음을</span><span class="s3"> </span><span class="s1">알고</span><span class="s3"> </span><span class="s1">믿음의</span><span class="s3"> </span><span class="s1">아들</span><span class="s3"> </span><span class="s1">디모데에게</span><span class="s3"> </span><span class="s1">유언과</span><span class="s3"> </span><span class="s1">같은</span><span class="s3"> </span><span class="s1">디모데후서를</span><span class="s3"> </span><span class="s1">써보냅니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">바로</span><span class="s3"> </span><span class="s1">이때</span><span class="s3"> </span><span class="s1">순교를</span><span class="s3"> </span><span class="s1">눈앞에</span><span class="s3"> </span><span class="s1">둔</span><span class="s3"> </span><span class="s1">복음</span><span class="s3"> 1</span><span class="s1">세대들이</span><span class="s3"> </span><span class="s1">복음</span><span class="s3"> 2</span><span class="s1">세대들을</span><span class="s3"> </span><span class="s1">위한</span><span class="s3"> </span><span class="s1">편지</span><span class="s3">, </span><span class="s1">히브리서</span><span class="s3">, </span><span class="s1">베드로전</span><span class="s3">·</span><span class="s1">후서</span><span class="s3">, </span><span class="s1">유다서를</span><span class="s3"> </span><span class="s1">남깁니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이는</span><span class="s3"> </span><span class="s1">복음</span><span class="s3"> 2</span><span class="s1">세대들이</span><span class="s3"> </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">제국의</span><span class="s3"> </span><span class="s1">박해</span><span class="s3"> </span><span class="s1">속에서</span><span class="s3"> </span><span class="s1">선한</span><span class="s3"> </span><span class="s1">싸움을</span><span class="s3"> </span><span class="s1">싸우며</span><span class="s3"> </span><span class="s1">하나님</span><span class="s3"> </span><span class="s1">나라</span><span class="s3"> </span><span class="s1">복음을</span><span class="s3"> </span><span class="s1">땅끝까지</span><span class="s3"> </span><span class="s1">전하도록</span><span class="s3"> </span><span class="s1">격려하기</span><span class="s3"> </span><span class="s1">위함입니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">그러나</span><span class="s3"> </span><span class="s1">사도</span><span class="s3"> </span><span class="s1">요한은</span><span class="s3"> </span><span class="s1">복음</span><span class="s3"> 1</span><span class="s1">세대로</span><span class="s3">, </span><span class="s1">로마</span><span class="s3"> </span><span class="s1">대화재</span><span class="s3"> </span><span class="s1">이후</span><span class="s3"> 30</span><span class="s1">여</span><span class="s3"> </span><span class="s1">년동안</span><span class="s3"> </span><span class="s1">더</span><span class="s3"> </span><span class="s1">살아남아</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">로마</span><span class="s3"> </span><span class="s1">제국의</span><span class="s3"> </span><span class="s1">박해</span><span class="s3"> </span><span class="s1">가운데</span><span class="s3"> </span><span class="s1">있는</span><span class="s3"> </span><span class="s1">복음</span><span class="s3"> 2</span><span class="s1">세대들을</span><span class="s3"> </span><span class="s1">돌보는</span><span class="s3"> </span><span class="s1">일을</span><span class="s3"> </span><span class="s1">감당합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">이때</span><span class="s3"> </span><span class="s1">요한</span><span class="s3"> </span><span class="s1">일</span><span class="s3">·</span><span class="s1">이</span><span class="s3">·</span><span class="s1">삼서를</span><span class="s3"> </span><span class="s1">기록하여</span><span class="s3"> </span><span class="s1">권면하면서</span><span class="s3"> ‘</span><span class="s1">하나님은</span><span class="s3"> </span><span class="s1">사랑</span><span class="s3">'</span><span class="s1">이라고</span><span class="s3"> </span><span class="s1">선언합니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">그리고</span><span class="s3"> </span><span class="s1">사도</span><span class="s3"> </span><span class="s1">요한은</span><span class="s3"> </span><span class="s1">복음</span><span class="s3"> 2</span><span class="s1">세대가</span><span class="s3"> </span><span class="s1">이끄는</span><span class="s3"> </span><span class="s1">소아시아</span><span class="s3"> </span><span class="s1">일곱</span><span class="s3"> </span><span class="s1">교회에</span><span class="s3"> </span><span class="s1">하나님의</span><span class="s3"> </span><span class="s1">어린양과</span><span class="s3"> </span><span class="s1">보좌</span><span class="s3">, </span><span class="s1">새</span><span class="s3"> </span><span class="s1">하늘과</span><span class="s3"> </span><span class="s1">새</span><span class="s3"> </span><span class="s1">땅을</span><span class="s3"> </span><span class="s1">소개하며</span><span class="s3">”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">주님</span><span class="s3"> </span><span class="s1">속히</span><span class="s3"> </span><span class="s1">다시</span><span class="s3"> </span><span class="s1">오시리라는</span><span class="s3"> </span><span class="s1">예수님의</span><span class="s3"> </span><span class="s1">간절한</span><span class="s3"> </span><span class="s1">재림</span><span class="s3"> </span><span class="s1">약속을</span><span class="s3"> </span><span class="s1">전하며</span><span class="s3"> </span><span class="s1">계시록</span><span class="s3"> </span><span class="s1">이야기를</span><span class="s3"> </span><span class="s1">끝냅니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">성경을</span><span class="s3"> </span><span class="s1">열면</span><span class="s3"> </span><span class="s1">기적이</span><span class="s3"> </span><span class="s1">열립니다</span><span class="s3">.”,</span></p>
-<p class="p3"><span class="s3">"</span><span class="s1">하나님의</span><span class="s3"> </span><span class="s1">말씀</span><span class="s3">, </span><span class="s1">성경으로</span><span class="s3"> </span><span class="s1">우리는</span><span class="s3"> 21</span><span class="s1">세기</span><span class="s3"> </span><span class="s1">신앙</span><span class="s3"> </span><span class="s1">부흥</span><span class="s3"> </span><span class="s1">운동을</span><span class="s3"> </span><span class="s1">곱셈하며</span><span class="s3"> </span><span class="s1">교회</span><span class="s3"> </span><span class="s1">부흥</span><span class="s3"> </span><span class="s1">운동을</span><span class="s3"> </span><span class="s1">곱셈할</span><span class="s3"> </span><span class="s1">것입니다</span><span class="s3">. </span><span class="s1">아멘</span><span class="s3">.”,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// </span><span class="s2">여기에</span><span class="s1"> </span><span class="s2">문장들</span><span class="s1"> </span><span class="s2">추가</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let currentSentenceIndex = 0;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const sentenceElement = document.getElementById('sentence');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const inputElement = document.getElementById('userInput');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const resultElement = document.getElementById('result');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const nextSentencesElement = document.getElementById('nextSentences');</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function displayNextSentences() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const nextSentences = sentences.slice(currentSentenceIndex + 1, currentSentenceIndex + 4).join("&lt;br&gt;");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>nextSentencesElement.innerHTML = nextSentences || "</span><span class="s2">더</span><span class="s1"> </span><span class="s2">이상의</span><span class="s1"> </span><span class="s2">문장이</span><span class="s1"> </span><span class="s2">없습니다</span><span class="s1">.";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function displayCurrentSentence() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>sentenceElement.textContent = sentences[currentSentenceIndex];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>inputElement.value = '';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>resultElement.innerHTML = '';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>displayNextSentences();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>inputElement.addEventListener('input', function () {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const typedText = inputElement.value;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const currentSentence = sentences[currentSentenceIndex];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let coloredText = '';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let isCorrect = true;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; currentSentence.length; i++) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (typedText[i] === currentSentence[i]) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>coloredText += `&lt;span class="correct"&gt;${currentSentence[i]}&lt;/span&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else if (typedText[i] !== undefined) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>coloredText += `&lt;span class="incorrect"&gt;${currentSentence[i]}&lt;/span&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>isCorrect = false;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>coloredText += currentSentence[i];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>resultElement.innerHTML = coloredText;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// </span><span class="s2">엔터</span><span class="s1"> </span><span class="s2">키를</span><span class="s1"> </span><span class="s2">눌렀을</span><span class="s1"> </span><span class="s2">때</span><span class="s1"> </span><span class="s2">맞는지</span><span class="s1"> </span><span class="s2">확인하고</span><span class="s1"> </span><span class="s2">다음</span><span class="s1"> </span><span class="s2">문장으로</span><span class="s1"> </span><span class="s2">이동</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>inputElement.addEventListener('keypress', function (event) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (event.key === 'Enter') {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if (isCorrect &amp;&amp; typedText.length === currentSentence.length) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>currentSentenceIndex++;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>if (currentSentenceIndex &lt; sentences.length) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>displayCurrentSentence();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>sentenceElement.textContent = "</span><span class="s2">모든</span><span class="s1"> </span><span class="s2">문장을</span><span class="s1"> </span><span class="s2">완료했습니다</span><span class="s1">!";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>inputElement.disabled = true;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// </span><span class="s2">첫</span><span class="s1"> </span><span class="s2">문장</span><span class="s1"> </span><span class="s2">표시</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>displayCurrentSentence();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+    <section class="bible-story-section">
+        <div class="content-wrapper">
+            <h2 class="subtitle">한빛청년부 통성경</h2>
+            <h1 class="title">10분에 성경 전체 이야기</h1>
+    
+            <!-- 현재 문장을 표시하는 박스 -->
+            <div class="sentence-box" id="sentence"></div>
+    
+            <!-- 사용자 입력 -->
+            <input type="text" id="userInput" class="userInput" placeholder="문장을 입력하세요."/>
+    
+            <!-- 다음 문장 미리보기 박스 -->
+            <div id="nextSentence1" class="next-sentence"></div>
+            <div id="nextSentence2" class="next-sentence"></div>
+            <div id="nextSentence3" class="next-sentence"></div>
+
+            <!-- 진행률 막대기 -->
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="progress-text" id="progressText">0%</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const sentences = [
+            "우리가 사도행전 7장의 스데반처럼 성경 전체를 틀리지 않게, 치우치지 않게, 선을 넘지 않고,", 
+            "사람들 앞에서 10분 안에 이야기한다면 하나님께서 얼마나 기뻐하실까요?",
+            "성경 창세기부터 요한계시록까지 66권은 하나의 이야기입니다.",
+            "창세기는 하나님의 천지창조, 노아 홍수 심판, 하나님의 마음 이야기를 담은 역사 이전의 역사, 원역사로 시작됩니다.",
+            "이어서 모리아산 번제로 하나님과 친구가 된 아브라함, 흉년에 100배 결실을 거둔 이삭, 열두 아들로 열두 지파의 기둥을 세운 야곱.",
+            "이렇게 족장 세 사람의 가나안 이야기, 그리고 요셉 때 민족을 만들기 위해 입애굽한 이야기입니다.",
+            "400년 후 히브리 민족이 첫 번째 유월절을 지키고 출애굽 합니다.",
+            "출애굽의 표면적 이유는 애굽 제국의 박해 때문입니다.",
+            "그러나 실제로는 하나님과 히브리 민족 사이에 모든 민족을 위한 세계 선교의 꿈인 ‘제사장 나라' 언약을 세우기 위해서였습니다.",
+            "레위기는 5대 제사를 비롯한 제사장 나라의 거룩한 시민학교 교과서이며,",
+            "민수기는 광야 40년 동안 모세에게 제사장 나라 교육을 받은 만나세대 이야기이고,",
+            "신명기는 만나학교 졸업식 설교입니다.",
+            "만나학교 졸업생들이 약속의 땅 가나안에 48개 관공서를 중심으로 제사장 나라를 세운 이야기가 여호수아이며,",
+            "사사기는 350년 동안 제사장 나라 1단계 흉년 징계와 2단계 수탈 징계 가운데 진행된 사사들을 통한 구원 이야기이고,",
+            "룻기는 사사 시대 제사장 나라 교육 성공 사례 이야기입니다.",
+            "사무엘이 어두웠던 사사 시대를 마감하고 미스바세대를 탄생시켜 제사장 나라를 꽃피웁니다.",
+            "이어서 사울이 이스라엘의 초대 왕이 됩니다.",
+            "사울과 사무엘의 갈등은 왕정 500년 동안 왕과 선지자 대립의 시작이 됩니다.",
+            "다윗이 세 번 기름 부음을 받고 왕이 되어 성전 건축을 준비하고 제사장 나라 충성도를 높이며 하나님의 종으로 인정을 받습니다.",
+            "그리고 하늘 문을 연 다윗의 여러 시편과 하나님의 자랑, 하늘보석 욥 이야기가 있습니다.",
+            "솔로몬은 모든 민족을 위한 성전 건축, 그리고 잠언, 아가, 전도서를 남깁니다.",
+            "솔로몬 사후 남북 분열 왕조 200년 동안 엘리야, 엘리사, 아모스, 호세아의 외침과",
+            "열방을 위한 하나님의 마음을 깨달은 요나의 3일 기적 이야기가 선포됩니다.",
+            "그러나 여러 선지자의 설득에도 끝내 여러보암의 길로 행한 북이스라엘이 B.C.8세기 앗수르에 멸망합니다.",
+            "이때 이사야, 미가 선지자는 메시아 예언과 베들레헴 탄생을 예고합니다.",
+            "150년 후 남유다가 바벨론에 멸망할 때 스바냐, 하박국, 나훔, 요엘 선지자가 500년 왕정 평가를 포괄적으로 선언합니다.",
+            "이때 예레미야는 제사장 나라 징계 3단계인 바벨론 포로 70년의 네 가지 의미",
+            "-징계, 교육, 안식, 제국 수명을 말하며 새 언약을 예고합니다.",
+            "그리고 바벨론 포로 징계를 마치고 예루살렘으로 돌아갈 재건세대에게 하나님의 미래 선물, 역대기가 주어집니다.",
+            "에스겔이 바벨론에서 남유다 포로민들을 하나님의 말씀으로 설득함으로 유대인이 시작됩니다.",
+            "그 사이 다니엘은 환상 가운데 바벨론, 페르시아, 헬라, 로마 제국 변동의 밑그림을 그리며 영원한 하나님 나라를 예언합니다.",
+            "바벨론 제국은 하나님의 약속대로 70년 만에 페르시아에 멸망하고,",
+            "페르시아 제국은 스룹바벨, 학개, 스가랴와 함께 유대인들을 돌려보내며",
+            "예루살렘에 성전을 재건하게 함으로 레반트 지역에 투자를 합니다.",
+            "한편 페르시아에 남은 유대인들은 아말렉족 하만의 계략으로 죽을 위기에 처하지만, 에스더의 파티를 통해 위기를 극복합니다.",
+            "이후 에스라가 2차 귀환을 이끌어 산헤드린 공회를 설치하고,",
+            "느헤미야가 3차 귀환을 이끌어 성벽을 재건함으로 제사장 나라 재건을 이룹니다.",
+            "제사장 나라를 세운 지 1000년만에 하나님께서는 말라기 선지자를 통해 그동안의 사랑 고백과 엘리야를 보내",
+            "아버지 마음을 자녀에게로, 자녀들의 마음을 아버지에게로 돌이키게 하겠다는 약속을 주신 후 400년 동안 침묵하십니다.",
+            "신구약 중간기 400년 동안 제국들이 변동합니다.",
+            "페르시아 제국이 멸망하고 헬라 제국이 등장하는데,",
+            "헬라 제국의 프톨레미 왕조 때에 모세오경이 헬라어로 번역되어 세계화가 이루어집니다.",
+            "이어서 헬라 제국의 셀루커스 왕조가 예루살렘 성전을 모독하자",
+            "마카비 가문이 혁명을 일으켜 성전을 청결하게 한 후 하스몬 왕조를 세웁니다.",
+            "그런데 하스몬 왕조는 80여 년 동안 대제사장이 왕을 겸직하므로 제사장 나라 법을 어깁니다.",
+            "이후 헬라 제국이 로마에 넘어가면서 유대는 로마 제국의 통치하에 들어갑니다.",
+            "이때 로마는 에돔족인 헤롯 가문을 유대의 분봉 왕으로 삼아",
+            "예루살렘 성전을 재건축하게 함으로 성전을 로마의 통치 도구로 전락시킵니다.",
+            "바로 이때 B.C.와 A.D. 분기점에 예수님께서 천사들과 목자들의 기쁨 속에 베들레헴에서 탄생하십니다.",
+            "예수님께서는 공생애 3년동안 하나님 사랑을 말씀하시며 한 영혼의 가치를 천하보다 귀하게 여기셨습니다.",
+            "때론 사랑때문에 피곤하고 지치기도 하셨습니다.",
+            "그리고 약한자의 비빌 언덕이 되시며 사마리아인과 세리의 친구가 되어주십니다.",
+            "공생애 마지막 일주일동안 예수님께서는 예루살렘에서 마지막 유월절 첫 번째 성찬식을 통해 새 언약을 체결하신 후",
+            "1차 산헤드린 공회 재판과 빌라도 재판을 받으시고 로마의 형틀이자 하늘 성소인 십자가에 달리십니다.",
+            "예수님께서 십자가에서 다 이루었다고 선언하시는 순간 예루살렘 성전의 휘장이 위에서 아래로 찢어집니다.",
+            "이는 예수님께서 율법과 선지서의 완성으로 단번 제사를 드리시고",
+            "우리를 위한 새로운 살길의 휘장이 되심으로 하나님 나라 복음을 완성하신 것입니다.",
+            "십자가 죽음 후 3일에 부활하신 예수님께서는 승천하시기 전 모든 민족에게 전할 지상명령을 말씀하십니다.",
+            "이후 오순절 성령 체험을 한 열두 사도들이 제자 시대를 열고 예루살렘 공회를 열며",
+            "2차, 3차, 4차 산헤드린 공회 재판의 위협 속에서도 하나님 나라 복음을 전하고 교회를 세워갑니다.",
+            "한편 바울은 다메섹 길에서 예수님을 만난 후 이방인의 사도로 부름을 받습니다.",
+            "바울은 예루살렘 공회에서 바나바를 안디옥 교회에 파송할 때 동행하게 되어 소아시아 1차 전도 여행을 합니다.",
+            "2년 후 안디옥 교회에 생긴 할례 문제를 놓고 예루살렘 공회가 열립니다.",
+            "이때 오직 예수 십자가만이 하나님 나라 구원의 기준이라고 선언합니다.",
+            "그리고 바울도 바나바와 같은 사랑받는 형제로 결의합니다.",
+            "이후 바울 팀은 2차, 3차 전도 여행을 하며 데살로니가, 갈라디아, 고린도, 로마 교회에 편지를 써 보냅니다.",
+            "바울 팀은 3차 전도 여행이 끝날 무렵,",
+            "로마를 거쳐 땅끝인 스페인까지 복음을 전하기 위한 계획을 세우고 예루살렘 교회를 방문하여 이 소식을 알립니다.",
+            "이때 예루살렘 공회의 당부로 바울은 예루살렘 성전에 갔다가 유대인들에게 잡혀 죽을 위기에 처하게 되지만,",
+            "오히려 로마 천부장의 협조로 5차 산헤드린 공회를 열어 공회원들에게 마지막 설득을 시도합니다.",
+            "그러나 산헤드린 공회의 위협이 거칠어지자 바울은 의도적으로 부활 신앙을 고백함으로",
+            "사두개파와 바리새파를 분열시키고 그곳을 빠져나옵니다.",
+            "그날 밤 바울은 로마천부장의 보호 속에 가이사랴로 이송되고, 다음 날 로마 총독 벨릭스의 재판을 받고 2년간 구금됩니다.",
+            "이후 바울은 새로 부임한 로마 총독 베스도의 재판을 받던 중,",
+            "산헤드린 공회의 살해 위협을 피하려고 결국, 로마 시민권을 이용해 로마 황제 재판을 요구하며 죄수의 길을 선택합니다.",
+            "그래서 죄수 이송선을 타고 로마에 도착합니다.",
+            "바울은 로마 감옥에서 황제 재판을 기다리는 2년 동안 하나님 나라 복음을 전하며",
+            "교회론인 에베소서, 기독론인 골로새서와 빌립보서, 빌레몬서를 써 보냅니다.",
+            "그리고 2년 만에 잠시 자유의 몸이 된 바울은 또다시 전도 여행을 진행합니다.",
+            "그런데 A.D.64년 로마 대화재 사건이 발생합니다.",
+            "이때 로마 제국은 기독교 복음 1세대 지도자 200여 명을 로마 방화범으로 지목하여 잔인하게 처형합니다.",
+            "바울도 죽음이 임박했음을 알고 믿음의 아들 디모데에게 유언과 같은 디모데후서를 써보냅니다.",
+            "바로 이때 순교를 눈앞에 둔 복음 1세대들이 복음 2세대들을 위한 편지, 히브리서, 베드로전·후서, 유다서를 남깁니다.",
+            "이는 복음 2세대들이 로마 제국의 박해 속에서 선한 싸움을 싸우며 하나님 나라 복음을 땅끝까지 전하도록 격려하기 위함입니다.",
+            "그러나 사도 요한은 복음 1세대로, 로마 대화재 이후 30여 년동안 더 살아남아",
+            "로마 제국의 박해 가운데 있는 복음 2세대들을 돌보는 일을 감당합니다.",
+            "이때 요한 일·이·삼서를 기록하여 권면하면서 ‘하나님은 사랑'이라고 선언합니다.",
+            "그리고 사도 요한은 복음 2세대가 이끄는 소아시아 일곱 교회에 하나님의 어린양과 보좌, 새 하늘과 새 땅을 소개하며",
+            "주님 속히 다시 오시리라는 예수님의 간절한 재림 약속을 전하며 계시록 이야기를 끝냅니다.",
+            "성경을 열면 기적이 열립니다.",
+            "하나님의 말씀, 성경으로 우리는 21세기 신앙 부흥 운동을 곱셈하며 교회 부흥 운동을 곱셈할 것입니다. 아멘."
+            ];
+
+        let currentSentenceIndex = 0;
+
+        const sentenceElement = document.getElementById('sentence');
+        const inputElement = document.getElementById('userInput');
+        const nextSentence1 = document.getElementById('nextSentence1');
+        const nextSentence2 = document.getElementById('nextSentence2');
+        const nextSentence3 = document.getElementById('nextSentence3');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+
+
+        function displaySentences() {
+            // 첫 번째 문장 표시
+            sentenceElement.innerText = sentences[currentSentenceIndex] || "";
+            // 다음 3개의 문장 표시
+            nextSentence1.innerText = sentences[currentSentenceIndex + 1] || "";
+            nextSentence2.innerText = sentences[currentSentenceIndex + 2] || "";
+            nextSentence3.innerText = sentences[currentSentenceIndex + 3] || "";
+            // 진행률 업데이트
+            updateProgress();
+            inputElement.value = ''; // 입력 필드를 비움
+        }
+
+        function updateProgress() {
+            const progress = ((currentSentenceIndex + 1) / sentences.length) * 100;
+            progressBar.style.width = `${progress}%`;  // 막대기 너비 설정
+            progressText.innerText = `${progress.toFixed(2)}%`;  // 진행률 텍스트 업데이트
+        }
+
+
+        // 입력값 비교 및 색상 표시
+        inputElement.addEventListener('input', function () {
+            const typedText = inputElement.value;
+            const currentSentence = sentences[currentSentenceIndex];
+
+            let highlightedText = '';
+            let isCorrect = true;
+
+            for (let i = 0; i < currentSentence.length; i++) {
+                if (typedText[i] === currentSentence[i]) {
+                    highlightedText += currentSentence[i];  // 올바른 부분은 그대로 표시
+                } else if (typedText[i] !== undefined) {
+                    highlightedText += `<span class="incorrect">${currentSentence[i]}</span>`;  // 틀린 부분은 빨간색
+                    isCorrect = false;
+                } else {
+                    highlightedText += currentSentence[i];  // 아직 입력되지 않은 부분은 그대로 표시
+                }
+            }
+
+            sentenceElement.innerHTML = highlightedText;
+
+
+        });
+
+        // 엔터로 문장 전환
+        inputElement.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                const typedText = inputElement.value;
+                const currentSentence = sentences[currentSentenceIndex];
+
+                if (typedText === currentSentence) {
+                    currentSentenceIndex++;
+                    if (currentSentenceIndex < sentences.length) {
+                        displaySentences();
+                        inputElement.value = '';  // 입력 필드 비움
+                    } else {
+                        sentenceElement.textContent = "모든 문장을 완료했습니다!";
+                        inputElement.disabled = true;  // 모든 문장을 완료하면 입력 비활성화
+                    }
+                }
+            }
+        });
+
+        // 페이지 로드 시 첫 문장과 다음 문장 3개를 표시
+        window.onload = function() {
+            displaySentences();
+        };
+    </script>
 </body>
 </html>
